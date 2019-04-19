@@ -438,7 +438,7 @@
 
 			};
 
-			var image = '/static/i/pin.png';
+			var image = 'static/i/pin.png';
 
 			mapOptions.center = new google.maps.LatLng(55.761103, 37.628890);
 			map = new google.maps.Map(document.getElementById('contactsmap'), mapOptions);
@@ -446,12 +446,7 @@
 
 			var map_center = new google.maps.LatLng(55.761103, 37.628890);
 
-			// if ($(window).width() <= 900) {
-			// 	map.setCenter(start_point);
-			// 	image = 'static/img/pin2.png';
-			// } else {
-			// 	map.setCenter(map_center);
-			// }
+
 
 			var marker = new google.maps.Marker({
 				position: start_point,
@@ -467,6 +462,135 @@
 				this.bindEvents();
 		}
 
+    }).init();
+
+    window.sf.animator = ({
+
+      hideBlock: function(block) {
+        block.clearQueue().stop().animate({
+          'opacity': 0
+        }, 400, function() {
+          block.removeAttr('style').removeClass('visible');
+        });
+      },
+  
+      showBlock: function(block, dir, duration, pause) {
+        if (dir === undefined) {
+          dir = 'btt';
+        }
+        if (duration === undefined) {
+          duration = 1200;
+        }
+        if (pause === undefined) {
+          pause = 0;
+        }
+  
+        if (/Mobi/.test(navigator.userAgent)) {
+          pause = 0;
+          duration = 400;
+        }
+  
+        setTimeout(function() {
+          switch (dir) {
+            case 'rtl':
+              block.animate({
+                'right': 0,
+                'opacity': 1
+              }, duration, 'linear', function() {
+                $(this).addClass('visible');
+              });
+              break;
+            case 'ltr':
+              block.animate({
+                'left': 0,
+                'opacity': 1
+              }, duration, 'linear', function() {
+                $(this).addClass('visible');
+              });
+              break;
+            case 'ttb':
+              block.animate({
+                'top': 0,
+                'opacity': 1
+              }, duration, 'linear', function() {
+                $(this).addClass('visible');
+              });
+              break;
+            case 'btt':
+              block.animate({
+                'bottom': 0,
+                'opacity': 1
+              }, duration, 'linear', function() {
+                $(this).addClass('visible');
+              });
+              break;
+            case 'fi':
+              block.animate({
+                'opacity': 1
+              }, duration, 'linear', function() {
+                $(this).addClass('visible');
+              });
+              break;
+            default:
+              break;
+          }
+        }, pause);
+      },
+  
+      startCheckVis: function() {
+        var _th = this;
+        var visArea = $(window).scrollTop() + $(window).height();
+  
+        $('.animator').each(function() {
+          if ($(this).offset().top >= visArea)
+            $(this).removeClass('visible');
+        });
+  
+        $('.animator:first-child').find('.animator').each(function() {
+          $(this).addClass('visible');
+        })
+      },
+  
+      checkVisibility: function(block) {
+  
+        var visArea = $(window).scrollTop() + $(window).height() * .9;
+  
+        if (block.offset().top < visArea)
+          return true;
+        else
+          return false;
+  
+      },
+  
+      scrollVis: function() {
+        var _th = this;
+  
+        $('.animator').each(function() {
+          if (!$(this).hasClass('visible')) {
+            if (_th.checkVisibility($(this)))
+              _th.showBlock($(this), $(this).data('dir'), $(this).data('duration'), $(this).data('pause'));
+          } else {
+            // if (!_th.checkVisibility($(this)))
+            // 	_th.hideBlock($(this));
+          }
+        });
+      },
+  
+  
+      init: function() {
+        var _th = this;
+  
+        _th.startCheckVis();
+  
+        $(window).scroll(function() {
+          _th.scrollVis();
+        });
+
+        $('body').addClass('animate')
+  
+        return this;
+      }
+  
     }).init();
     
 });

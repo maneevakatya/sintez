@@ -1,0 +1,59 @@
+.header-fixed
+    display: flex
+    visibility: hidden
+    top: -100%
+    opacity: 0
+    transition: .8s top, .8s opacity, .8s visibility
+
+    &.visible
+        top: 0
+        visibility: visible
+        opacity: 1
+
+.animator
+    position: relative
+
+.animator:not(.visible)[data-dir="rtl"]
+    right: -100px
+    opacity: 0
+
+.animator:not(.visible)[data-dir="ltr"]
+    left: -100px
+    opacity: 0
+
+.animator:not(.visible)[data-dir="ttb"]
+    top: -100px
+    opacity: 0
+
+.animator:not(.visible)[data-dir="btt"]
+    bottom: -100px
+    opacity: 0
+
+.animator:not(.visible)[data-dir="fi"]
+    opacity: 0
+
+
+body
+    overflow: hidden
+
+.header,
+.intro
+    position: relative
+    top: -100px
+    opacity: 0
+    transition: .8s top, .8s opacity
+
+.intro
+    transition-delay: .4s
+
+.animate
+    .intro,
+    .header
+        top: 0
+        opacity: 1
+
+@media (max-width: 1023px)
+    .header-fixed
+        top: 0
+        opacity: 1
+        visibility: visible
