@@ -1,0 +1,120 @@
+html
+	-webkit-box-sizing border-box
+	box-sizing border-box
+
+*,
+*::after,
+*::before
+	-webkit-box-sizing inherit
+	box-sizing inherit
+
+
+body,
+html
+	width: 100%
+	font-family: 'Open Sans'
+	font-size: 18px
+	overflow-x: hidden
+p
+	line-height: 26px
+	
+*
+	box-sizing: border-box
+
+[type="checkbox"], [type="radio"] 
+	box-sizing: border-box
+
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+img,
+a,
+p,
+button
+	margin: 0
+	padding: 0
+
+a
+	text-decoration: none
+textarea
+	resize: none
+.ovh
+	overflow: hidden
+	position: fixed
+
+.title
+	font-size: 32px
+	color: #000
+	text-transform: uppercase
+	line-height: 49px
+	margin-bottom: 18px
+	font-weight: 400
+	font-family: 'Colus-Regular'
+	&--white
+		color: #fff
+
+p
+	margin-bottom: 26px
+a
+	color: #000
+#agreement
+	display: none
+	width: 70%
+	padding: 50px
+
+
+
+	
+.swiper-pagination-bullet
+	width: 28px
+	height: 28px
+	border: 6px solid #29492a
+	border-radius: 50%
+	background-color: #fff
+	opacity: 1
+	transition: .5s background-color
+
+.swiper-pagination-bullet:hover
+	background-color: #6f9370
+
+.swiper-pagination-bullet-active
+	background-color: #6f9370
+
+.swiper-container-horizontal
+	> .swiper-pagination-bullets
+		bottom: 48px
+		left: 0
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet
+	margin: 0 9px
+
+
+@media (max-width: 1365px)
+	#agreement
+		width: 90%
+
+@media (max-width: 1023px)
+	body
+		font-size: 15px
+		padding-top: 83px
+	p
+		line-height: 23px
+	.title
+		font-size: 23px
+		line-height: 32px
+	#agreement
+		padding: 20px
+
+@media (max-width: 500px)
+	.title
+		font-size: 21px
+		line-height: 30px
+
+
+@media (max-width: 374px)
+	.title
+		font-size: 18px
+    	line-height: 28px

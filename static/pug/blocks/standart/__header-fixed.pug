@@ -1,0 +1,21 @@
+mixin header-fixed
+    .header-fixed
+        a(href="/").header-fixed__logo
+            img(src="static/i/synthesis_logo2small.svg", alt="logo")
+        nav.nav
+            ul.nav__list
+                li.nav__item
+                    a(href="/#about").js-scrollTo.nav__link О фонде
+                li.nav__item 
+                    a(href="/#mission").js-scrollTo.nav__link Наша миссия
+                li.nav__item
+                    a(href="/#people").js-scrollTo.nav__link История успеха
+                li.nav__item 
+                    a(href="/#documents").js-scrollTo.nav__link Документы
+                li.nav__item 
+                    a(href="/#request").js-scrollTo.nav__link Подать заявку
+                li.nav__item 
+                    a(href="/#contacts").js-scrollTo.nav__link Контакты
+        
+        button(type="button").header-fixed__burger.js-burger
+            i

@@ -1,0 +1,80 @@
+.contacts
+
+    display: flex
+
+    .title
+        margin-bottom: 38px
+
+    &__info
+        max-width: 727px
+        width: 100%
+        padding-top: 96px
+        padding-bottom: 50px
+        padding-left: 110px
+    &__map
+        max-width: 1184px
+        width: 100%
+    #map
+        height: 696px
+    #contactsmap
+        height: 100%
+
+    &__item
+        margin-bottom: 24px
+
+    &__link
+        position: relative
+        padding-left: 42px
+        transition: opacity 0.4s ease
+        &:hover
+            opacity: 0.8
+        &--address
+            &:hover
+                opacity: 1
+
+        &:before
+            content: ""
+            position: absolute
+            left: -3px
+            top: 50%
+            transform: translateY(-50%)
+            background-size: cover
+
+        &--phone:before
+            background-image: url("/static/i/phone-icon.png")
+            width: 23px
+            height: 25px
+        &--email:before
+            background-image: url("/static/i/mail-icon.png")
+            width: 22px
+            height: 17px
+        &--address:before
+            background-image: url("/static/i/pin-icon.png")
+            width: 25px
+            height: 30px
+
+
+@media (max-width: 1023px)
+    .contacts
+
+        &__info
+            padding: 50px
+            padding-right: 40px
+            max-width: unset
+            width: 50%
+        &__map
+            max-width: unset
+            width: 50%
+
+
+@media (max-width: 767px)
+    .contacts
+        flex-direction: column
+        &__info
+            padding: 30px 20px
+        #map
+            height: 400px
+
+ 
+
+        

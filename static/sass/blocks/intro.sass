@@ -1,0 +1,61 @@
+.intro
+    display: flex
+
+    &__left
+        max-width: 711px
+        width: 100%
+        position: relative
+        img
+            display: block
+            
+
+    &__right
+        max-width: 1209px
+        width: 100%
+        background-color: #000
+        background-image: url(/img/intro-bg.jpg)
+        background-position-x: right
+        padding: 62px
+        padding-left: 70px
+
+
+    &__text 
+        max-width: 808px
+        width: 100%
+        p
+            color: #ffffff
+
+
+@media (max-width: 1720px)
+    .intro
+        &__text
+            max-width: 700px
+        &__right
+            background-position-x: -500px
+            background-size: cover
+        &__left
+            img
+                position: absolute
+                z-index: -1
+                height: 100%
+                left: 50%
+                transform: translateX(-50%)
+
+@media (max-width: 1023px)
+    .intro
+        &__right
+            padding: 30px
+
+@media (max-width: 767px)
+    .intro
+    
+        flex-direction: column
+        &__right
+            padding: 30px 20px
+
+        &__left
+            max-width: unset
+            img
+                position: static
+                width: 100%
+                transform: none

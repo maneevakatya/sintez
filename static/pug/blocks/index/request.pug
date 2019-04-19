@@ -1,0 +1,20 @@
+mixin request
+    section.request#request
+        h1.title.title--white Подать заявку
+        form.request__form(method="post")
+            .request__field
+                label.request__label ФИО
+                input(type="text", data-req="req").request__input.request__input--fio
+            .request__field
+                label.request__label Расскажите о себе
+                textarea.request__textarea
+            .request__field
+                label.request__label Телефон
+                input(type="text", data-req="req", data-type="mobile").request__input.request__input--phone
+            .request__field.request__field--email
+                label.request__label Email
+                input(type="text", data-req="req").request__input
+            .request__field.request__field--radio
+                input(type="checkbox", id="radio", checked="checked").request__radio
+                label(for="radio") Даю согласие на обработку персональных данных
+            input(type="submit").request__button

@@ -1,0 +1,151 @@
+.header-fixed
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: #3c5d3d
+    padding: 0 56px
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 9999
+    display: none
+    transition: all 0.4s ease
+    box-shadow: 0 0px 4px #272727
+
+    &.visible
+        display: flex
+    
+    &__logo
+        width: 195px
+        height: 63px
+        display: block
+        transition: opacity 0.4s ease
+        margin-right: 50px
+        img
+            width: 100%
+            height: 100%
+        &:hover
+            opacity: 0.8
+
+    .nav
+        margin-bottom: 0
+        max-width: 900px
+        width: 100%
+        &__item
+            padding-top: 36px
+
+    &__burger
+        z-index: 101
+        position: relative
+        display: none
+        width: 40px
+        height: 24px
+        padding: 0
+        cursor: pointer
+        user-select: none
+        border: none
+        outline: none
+        background: none
+
+        i
+            position: absolute
+            top: auto
+            bottom: 0
+
+            display: block
+
+            width: 40px
+            height: 4px
+            margin-top: -2px
+
+            transition-delay: 0.13s
+            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+            transition-duration: 0.13s
+
+            background-color: #fff
+
+            &:before, &:after
+                position: absolute
+                display: block
+                width: 40px
+                height: 4px
+                content: ""
+                transition-timing-function: ease
+                transition-duration: 0.15s
+                transition-property: transform
+                background-color: #fff
+            
+            &:before
+                top: -10px
+
+                transition: top 0.12s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+                background-color: #fff
+            
+            &:after
+                top: -20px
+                bottom: -10px
+
+                transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, opacity 0.1s linear
+
+                background-color: #fff
+
+        &--active
+            i
+                transition-delay: 0.22s
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+                transform: translate3d(0, -10px, 0) rotate(-45deg)
+                background-color: #fff
+
+                &:before, &:after
+                    background-color: #fff
+                &:before
+                    top: 0
+                    transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.16s, transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s
+                    transform: rotate(-90deg)
+                &:after
+                    top: 0
+                    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s linear 0.22s
+                    opacity: 0
+
+
+
+
+
+
+            
+
+
+            
+
+		
+
+@media (max-width: 1335px)
+    .header-fixed
+        .nav
+            &__link
+                font-size: 14px
+
+@media (max-width: 1023px)
+    .header-fixed
+        display: flex
+        padding-top: 10px
+        padding-bottom: 10px
+        .nav
+            display: none
+            max-width: unset
+            &__item
+                padding-top: 20px
+                padding-bottom: 20px
+        
+        &__burger
+            display: block
+
+@media (max-width: 767px)
+    .header-fixed
+        padding-left: 20px
+        padding-right: 20px
+    
+
+

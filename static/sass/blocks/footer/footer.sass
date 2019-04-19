@@ -1,0 +1,40 @@
+.footer
+    display: flex
+    justify-content: space-between
+    background-color: #3c5d3d
+    padding-left: 111px
+    padding-right: 111px
+    padding-top: 39px
+    padding-bottom: 46px
+    
+    &__link
+        color: #ffffff
+        font-size: 11px
+        border-bottom: 1px solid #fff
+        transition: border-color 0.4s ease
+        line-height: 1
+        display: block
+        &:hover
+            border-color: transparent
+
+@media (max-width: 1023px)
+    .footer
+        padding-left: 50px
+        padding-right: 50px
+
+@media (max-width: 767px)
+    .footer
+        padding: 20px
+
+@media (max-width: 500px)
+    .footer
+        flex-direction: column
+        align-items: flex-start
+
+        &__left
+            margin-bottom: 5px
+        
+        &__link
+            display: inline
+            text-decoration: underline
+            border: 0

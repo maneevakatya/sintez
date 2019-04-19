@@ -1,0 +1,132 @@
+.documents
+    padding-top: 94px
+    padding-bottom: 31px
+    padding-left: 110px
+    position: relative
+
+    &:before
+        content: ""
+        position: absolute
+        top: -83px
+        right: -9px
+        background-image: url(/img/badge.png)
+        width: 505px
+        height: 1371px
+        z-index: 999
+
+
+    &__text
+        margin-bottom: 68px
+        max-width: 664px
+        width: 100%
+        
+    &__list
+        max-width: 1100px
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+
+    &__item
+        padding-top: 176px
+        max-width: 117px
+        width: 100%
+        font-size: 16px
+        line-height: 21px
+        color: #3c5d3d
+        font-family: 'Colus-Regular'
+        text-transform: uppercase
+        text-align: center
+        transition: opacity 0.4s ease
+        position: relative
+        margin-bottom: 70px
+        margin-right: 210px
+
+        &:nth-child(4n)
+            margin-right: 0
+
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            width: 106px
+            height: 136px
+            background-image: url(/static/i/pdf.png)
+
+        &:hover
+            opacity: 0.8
+
+@media (max-width: 1850px)
+    .documents
+        &:before
+            top: -83px
+            right: -156px
+            background-size: 70%
+            background-repeat: no-repeat
+
+@media (max-width: 1850px)
+    .documents
+        &__list
+            max-width: 900px
+        &__item
+            margin-right: 70px
+
+@media (max-width: 1650px)
+    .documents
+        &__list
+            max-width: 920px
+        &__item
+            margin-right: 150px
+
+@media (max-width: 1500px)
+    .documents
+        &__list
+            max-width: 850px
+        &__item
+            margin-right: 100px
+
+@media (max-width: 1366px)
+    .documents
+        &:before
+            top: -83px
+            right: -255px
+            background-size: 50%
+            background-repeat: no-repeat
+
+@media (max-width: 1366px)
+    .documents
+        &:before
+            content: none
+
+@media (max-width: 1023px)
+    .documents
+        padding: 50px
+        padding-bottom: 0
+
+@media (max-width: 767px)
+    .documents
+        padding: 20px
+        &__item
+            margin-right: 50px
+
+@media (max-width: 500px)
+    .documents
+        &__list
+            justify-content: space-between
+        &__item
+            max-width: unset
+            width: 48%
+            margin: 0
+        &__item:nth-child(2n+2)
+            margin-right: 0
+
+        &__item
+            margin-bottom: 40px
+
+@media (max-width: 374px)
+    .documents
+        padding: 30px 20px
+        &__item
+            margin-right: 40px
+

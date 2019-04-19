@@ -1,0 +1,99 @@
+.mission
+
+    display: flex
+    position: relative
+    &:after
+        content: ""
+        position: absolute
+        width: 806px
+        height: 1554px
+        background-image: url(/img/cup1.png)
+        top: -202px
+        right: -9px
+        z-index: 9
+
+    &__left
+        max-width: 806px
+        width: 100%
+        padding-top: 136px
+        padding-bottom: 106px
+        padding-left: 110px
+
+    &__right
+        max-width: 1116px
+        width: 100%
+        position: relative
+        background-image: url(/img/Glasses.png)
+        background-repeat: no-repeat
+        background-position-x: 148px
+        background-position-y: 46px
+        
+        &:before
+            content: ""
+            position: absolute
+            width: 684px
+            height: 243px
+            background-image: url(/img/marker.png)
+            bottom: -116px
+            left: 52px
+            z-index: 99
+
+@media (max-width: 1750px)
+    .mission
+        &__right
+            background-position-x: 0px
+            background-size: 70%
+            &:before
+                background-repeat: no-repeat
+                background-size: 80%
+        &:after
+            right: -165px
+            bottom: -238px
+            background-size: 80%
+            background-repeat: no-repeat
+        
+@media (max-width: 1500px)
+    .mission
+        &:after
+            right: -326px
+            top: -100px
+            background-repeat: no-repeat
+            background-size: 60%
+            z-index: 0
+        &__right
+            background-size: 60%
+            background-position-y: 73px
+
+@media (max-width: 1023px)
+    .mission
+        &__left
+            padding-left: 50px
+
+@media (max-width: 767px)
+    .mission
+        &__left
+            padding-left: 20px
+            padding-top: 30px
+        &:after
+            right: -485px
+            top: -16px
+            background-size: 40%
+
+
+@media (max-width: 600px)
+    .mission
+        &__left
+            max-width: unset
+
+        &:after
+            content: none
+        &__right
+            display: none
+
+
+
+
+        
+
+
+
