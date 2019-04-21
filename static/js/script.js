@@ -66,6 +66,7 @@
     window.sf.burger = ({
       init: function () {
         $('.js-burger').on('click', function () {
+          if ($(window).width() < 1024) {
           var _t = $(this),
             nav = _t.siblings('.nav'),
             body = $('body');
@@ -79,6 +80,7 @@
             nav.fadeOut('350');
           }
           return false;
+        }
         });
       }
     }).init();
@@ -118,12 +120,12 @@
             $(this).css('display', 'none');
           })
           $(".header-fixed__burger").toggleClass("header-fixed__burger--active");
-          $("body").toggleClass("ovh");
+         // $("body").toggleClass("ovh");
 
         }
          else {
           $("html, body").animate({
-            scrollTop: destination - 85
+            scrollTop: destination - 90
           }, 1500)
         }
     });
