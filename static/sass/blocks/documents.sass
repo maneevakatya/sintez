@@ -2,6 +2,7 @@
     padding-top: 94px
     padding-bottom: 31px
     padding-left: 110px
+    padding-right: 110px
     position: relative
 
     &:before
@@ -17,15 +18,15 @@
 
     &__text
         margin-bottom: 68px
-        max-width: 664px
-        width: 100%
-        
+
+    
     &__list
         max-width: 1100px
         width: 100%
         display: flex
         flex-wrap: wrap
 
+ 
     &__item
         padding-top: 176px
         max-width: 117px
@@ -40,6 +41,11 @@
         position: relative
         margin-bottom: 70px
         margin-right: 210px
+        display: block
+        span
+            max-width: 117px
+            width: 100%
+            display: inline-block
 
         &:nth-child(4n)
             margin-right: 0
@@ -82,51 +88,62 @@
 @media (max-width: 1500px)
     .documents
         &__list
-            max-width: 850px
+            max-width: unset
         &__item
-            margin-right: 100px
+            margin-right: 112px
 
 @media (max-width: 1366px)
     .documents
         &:before
             top: -83px
-            right: -255px
-            background-size: 50%
+            right: -300px
+            background-size: 45%
             background-repeat: no-repeat
 
-@media (max-width: 1366px)
+@media (max-width: 1200px)
     .documents
         &:before
             content: none
+        &__list
+            max-width: unset
+
+            width: auto
 
 @media (max-width: 1023px)
     .documents
         padding: 50px
         padding-bottom: 0
+        &__item
+            margin-right: calc((100% - 468px) / 3)
 
 @media (max-width: 767px)
     .documents
         padding: 20px
-        &__item
-            margin-right: 50px
 
+@media (max-width: 600px)
+    .documents
+        &__item
+            margin-right: calc((100% - 351px) / 2)
+            &:nth-child(4n)
+                margin-right: calc((100% - 351px) / 2)
+            &:nth-child(3n)
+                margin-right: 0
 @media (max-width: 500px)
     .documents
-        &__list
-            justify-content: space-between
-        &__item
-            max-width: unset
-            width: 48%
-            margin: 0
-        &__item:nth-child(2n+2)
-            margin-right: 0
-
         &__item
             margin-bottom: 40px
+
+@media (max-width: 420px)
+    .documents
+        &__item
+            margin-right: calc(100% - 234px)
+            &:nth-child(2n)
+                margin-right: 0
+            &:nth-child(3n)
+                margin-right: calc(100% - 234px)
 
 @media (max-width: 374px)
     .documents
         padding: 30px 20px
-        &__item
-            margin-right: 10px
+ 
 
