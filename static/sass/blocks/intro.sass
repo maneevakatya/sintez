@@ -18,7 +18,9 @@
         position: relative
         img
             display: block
-            
+            width: 100%
+            object-fit: cover
+
 
     &__right
         max-width: 1209px
@@ -30,7 +32,7 @@
         padding-left: 70px
 
 
-    &__text 
+    &__text
         max-width: 808px
         width: 100%
         p
@@ -76,7 +78,7 @@
 
 @media (max-width: 767px)
     .intro
-    
+
         flex-direction: column
         &__right
             padding: 30px 20px

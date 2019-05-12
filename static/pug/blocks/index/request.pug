@@ -14,6 +14,10 @@ mixin request
             .request__field.request__field--email
                 label.request__label Email
                 input(type="text", data-req="req").request__input
+            .request__field.request__field--captcha
+                label.request__label Введите код
+                input(type="text", data-req="req").request__input
+                img(src="./img/captcha.png")
             .request__field.request__field--radio
                 input(type="checkbox", id="radio", checked="checked").request__radio
                 label(for="radio") Даю согласие на обработку персональных данных

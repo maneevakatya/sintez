@@ -43,6 +43,11 @@
             align-items: flex-start
             label
                 margin-top: 20px
+        &--captcha
+            align-items: unset
+            img
+              max-width: 400px
+              margin-left: 10px
     &__input
         max-width: 358px
         width: 100%
@@ -85,7 +90,7 @@
         box-shadow: 4.459px 4.015px 5px 0px rgba(25, 0, 10, 0.3)
         &:hover
             opacity: 0.8
-    
+
     &__radio
         position: absolute
         z-index: -1
@@ -95,7 +100,7 @@
             &:after
                 opacity: 1
 
-    &__radio+label 
+    &__radio+label
         position: relative
         padding: 0 0 0 35px
         cursor: pointer
@@ -174,5 +179,3 @@
     .request__button
         max-width: unset
         width: 90%
-
-            
